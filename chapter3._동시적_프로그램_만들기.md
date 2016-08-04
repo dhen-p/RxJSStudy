@@ -13,9 +13,9 @@ Observable 파이프라인은 몇개의 operator가 같이 결합된 것을 의�
 ```
 Rx.Observable	.from(1, 2, 3, 4, 5, 6, 7, 8) 	.filter(function(val) { return val % 2; }) 
 	.map(function(val) { return val * 10; });```
-### 전역변수 사용을 피하기
+- ### 전역변수 사용을 피하기
 순수함수란 같은 입력값에 대해 항상 같은 출력을 반환하는 함수를 말합니다. 이를통해 전역변수로 사용을 피할 수 있습니다.
-### 효율적인 파이프라인
+- ### 효율적인 파이프라인
 JS에서 Array를 chaining operator를 사용해서 변형하게되면 비용이 많이든다. operator를 거칠때마다 새로운 Array를 리턴하기 때문이다. 하지만 Observable 파이프라인은 중간에 새로운 Observable을 만들지 않고, 모든 operator를 거친 Observable을 리턴한다. 이러한점에서 매우 효율적이라고 할수 있습니다.
 다음의 예제에서 그 차이점을 확인할 수 있습니다.
 ```
