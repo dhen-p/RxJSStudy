@@ -34,8 +34,8 @@ stringObservable // represents an observable emitting 1,000 strings
 2. 1의 대문자 변환함수와 함께 적용되는 filter 함수를 만든다. 그리고 subcribe될 시에만, 대문자 변환함수와 filter함수가 적용된 값을 내보내는 Observable을 리턴한다.
 3. Observable을 subscribe하여, 값을 만들어 내도록 한다. 각각의 아이템들에 대한 (1,2의)변형함수는 아이템당 한번만 적용된다.
 
-## [Rx's Subject](http://xgrommx.github.io/rx-book/content/subjects/subject/index.html)
-### Subject
+## Rx's Subject
+### [Subject](http://xgrommx.github.io/rx-book/content/subjects/subject/index.html)
 Subject는 Observer와 Observable을 함께 구현한 형태의 타입입니다. Observer로써 Observable을 받아볼 수 있고,  Observable로써 값을 만들어내거나 자신을 받아줄 Observer를 가질수도 있습니다. (Subject는 `Rx.Observable`과 `Rx.Observer` 클래스를 상속받는다)
 다음의 시나리오에서는 하나의 Subject가  Observer와 Observable의 역할을 같이 수행하는 것을 볼수 있습니다. data source와 subject의 리스너 사이의 proxy객체를 만드는 것이 대표적인 예입니다.
 다음은 Subject가 proxy객체로 사용되는 예 입니다.
