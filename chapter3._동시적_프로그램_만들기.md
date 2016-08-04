@@ -11,7 +11,7 @@ Observable 파이프라인은 여러 개의 operator가 같이 결합된 것을 
 ```javascript
 Rx.Observable  .from(1, 2, 3, 4, 5, 6, 7, 8)  .filter(function(val) { return val % 2; })
   .map(function(val) { return val * 10; });```
-### 전역변수 사용을 피하기순수함수란 같은 입력값에 대해 항상 같은 출력을 반환하는 함수를 말합니다. 이를통해 전역변수로 사용을 피할 수 있습니다. [Operator is pure function?](https://github.com/ReactiveX/rxjs/blob/master/doc/operators.md)
+### 전역변수 사용을 피하기순수함수란 같은 입력값에 대해 항상 같은 출력을 반환하는 함수를 말합니다. 이를통해 전역변수 사용을 피할 수 있습니다. [Operator is pure function?](https://github.com/ReactiveX/rxjs/blob/master/doc/operators.md)
 <p data-height="265" data-theme-id="0" data-slug-hash="xOaNaL" data-default-tab="result" data-user="dhen-p" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/dhen-p/pen/xOaNaL/">RxJS test</a> by Daehyun Park (<a href="http://codepen.io/dhen-p">@dhen-p</a>) on <a href="http://codepen.io">CodePen</a>.</p><script async src="http://assets.codepen.io/assets/embed/ei.js"></script>### 효율적인 파이프라인JS에서 Array를 chaining operator를 사용해서 변형하게되면 비용이 많이든다. operator를 거칠때마다 새로운 Array를 리턴하기 때문이다. 하지만 Observable 파이프라인은 중간에 새로운 Observable을 만들지 않고, 모든 operator를 거친 Observable을 리턴한다. 이러한점에서 매우 효율적이라고 할수 있습니다.
 다음의 예제에서 그 차이점을 확인할 수 있습니다.
 ```javascript
@@ -50,7 +50,7 @@ Subject는 Observer와 Observable을 함께 구현한 형태의 타입입니다.
 추가적인 설명 : [RxJS Documentation - Subject](https://github.com/ReactiveX/rxjs/blob/master/doc/subject.md)
 
  RxJS의 Subject는 Observable의 특정한 타입이면서, 다수의 Observer에게 값들을 multicast 할수 있습니다. 일반적인 Observable은 unicast인 반면에 Subject는 multicast입니다.
- 이는 마치 EventEmitters(: 다수의 리스터를 가지고있는..)와 같습니다.
+ 이는 마치 EventEmitters(: 다수의 리스너를 가지고있는..)와 같습니다.
 
  **모든 Subejct는 Observable이다.** subject를 subscribe할수 있습니다. 여기서 `subscirbe`는 즉각적으로 값들을 전달하지는 않습니다. 마치 `addListener`와 같은 역할을 합니다.
 
